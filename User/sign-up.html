@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fitness Plans</title>
+    <meta name="description" content="Fitness plans">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="" async defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!--Navigation Bar Menu-->
+        <img src="" alt="FitSphere Logo">
+        <div id="nav-bar">
+          <a href="../index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="diet-plans.html">Diet Plans</a>
+          <a href="fitness-plans.html">Fitness Plans</a>
+          <a href="about-us.html">About Us</a>
+        </div>
+
+        <!--Account Management Options-->
+        <div id="account-login">
+            <button onclick="location.href='sign-up.html'">Sign Up</button>
+            <button onclick="location.href='log-in.html'">Log In</button>          
+          </div>
+      </nav>
+    </header>
+
+    <main>
+        <!-- Logo -->
+        <img src="" alt="FitSphere Icon">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+          <div>
+            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+          </div>
+          <div class="signup-field">
+            <input type="date" id="birthday" name="birthday" placeholder="Birthday" required>
+          </div>
+          <div class="signup-field"></div>
+            <input type="text" id="gender" name="gender" placeholder="Gender" required>
+          </div>
+          <div class="signup-field"></div>
+            <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
+          </div>
+          <div class="signup-field"></div>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="signup-field"></div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+          <!--Should produce success pop up message -->
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+      </main>
+
+    <footer>
+      <p>&copy;FitSphere 2024</p>
+    </footer>
+  </body>
+</html>
