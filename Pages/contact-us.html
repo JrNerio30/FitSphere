@@ -4,13 +4,60 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Contact Us</title>
-    <meta name="description" content="">
+    <meta name="description" content="Get in touch with us">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <script src="" async defer></script>
   </head>
   <body>
+    <header>
+      <nav>
+        <!--Navigation Bar Menu-->
+        <img src="" alt="FitSphere Logo">
+        <div id="nav-bar">
+          <a href="../index.html">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="diet-plans.html">Diet Plans</a>
+          <a href="fitness-plans.html">Fitness Plans</a>
+          <a href="about-us.html">About Us</a>
+        </div>
 
+        <!--Account Management Options-->
+        <div id="account-login">
+          <button>Log In</button>
+          <button>Sign Up</button>
+        </div>
+      </nav>
+    </header>
     
+    <main>
+      <h1>Contact Us</h1>
+      <form action="/submit" method="POST">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="contact-name" placeholder="Enter your name" required>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="contact-email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Message Field -->
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="contact-message" placeholder="Write your message here" rows="5" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy;FitSphere 2024</p>
+    </footer>
   </body>
 </html>
