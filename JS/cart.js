@@ -233,17 +233,24 @@ const addCartToHTML = () => {
 
 /*
   This event listener removes an item from the cart
-  Steps:
-  - Get the position of the click
-  - Check if the clicked element has the "remove-cart-item" class
-  - Get the product ID from the clicked element's dataset
-  - Call the removeFromCart function with the product ID
 */
 cartItemsContainer.addEventListener("click", (event) => {
   let positionClick = event.target;
   if (positionClick.classList.contains("remove-cart-item")) {
     let productId = positionClick.dataset.id;
     removeFromCart(productId);
+  }
+  
+  // Handle decrease quantity button
+  if (positionClick.classList.contains("decrease-cart-item-quantity")) {
+    let productId = positionClick.closest(".cart-item").querySelector(".remove-cart-item").dataset.id;
+    changeQuantity(productId, "decrease");
+  }
+  
+  // Handle increase quantity button
+  if (positionClick.classList.contains("increase-cart-item-quantity")) {
+    let productId = positionClick.closest(".cart-item").querySelector(".remove-cart-item").dataset.id;
+    changeQuantity(productId, "increase");
   }
 });
 
@@ -263,6 +270,35 @@ const removeFromCart = (productId) => {
     carts.splice(positionProduct, 1); // Remove the product from the cart array
     localStorage.setItem("cart", JSON.stringify(carts)); // Update localStorage
     addCartToHTML(); // Re-render the cart items
+  }
+};
+
+/*///////////////////////////////////////////////////////////
+  FUNCTIONS TO UPDATE CART ITEM QUANTITIES
+///////////////////////////////////////////////////////////*/
+
+// Add this new function to handle quantity changes
+const changeQuantity = (productId, action) => {
+  let positionProduct = carts.findIndex(
+    (value) => value.productId == productId
+  );
+  
+  if (positionProduct >= 0) {
+    switch(action) {
+      case "decrease":
+        if (carts[positionProduct].quantity > 1) {
+          carts[positionProduct].quantity -= 1;
+        } else {
+          carts.splice(positionProduct, 1); // Remove item if quantity would be 0
+        }
+        break;
+      case "increase":
+        carts[positionProduct].quantity += 1;
+        break;
+    }
+    
+    localStorage.setItem("cart", JSON.stringify(carts));
+    addCartToHTML();
   }
 };
 
