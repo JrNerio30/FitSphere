@@ -6,32 +6,32 @@
     <title>FitSphere</title>
     <meta name="description" content="FitSphere homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/base.css">
+    <script src="JS/base.js" defer></script>
   </head>
 
   <body>
     <header>
       <nav>
         <!--Navigation Bar Menu-->
-        <img src="" alt="FitSphere Logo">
+        <img src="Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo">
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="nav-bar">
           <a href="index.html">Home</a>
-          <a href="Pages/shop.html">Shop</a>
+          <a href="Pages/shop-products.html">Shop</a>
           <a href="Pages/diet-plans.html">Diet Plans</a>
           <a href="Pages/fitness-plans.html">Fitness Plans</a>
           <a href="Pages/about-us.html">About Us</a>
-        </div>
-
         <!--Account Management Options-->
-        <div id="account-login">
-          <button onclick="location.href='User/sign-up.html'">Sign Up</button>
-          <button onclick="location.href='User/log-in.html'">Log In</button>          
+          <button onclick="location.href='User/sign-up.html'">Log In</button>
+          <button onclick="location.href='User/log-in.html'">Sign Up</button>          
         </div>
-        </nav>
+      </nav>
 
         <div id="hero-banner"> 
           <!--Hero Banner Image-->
-          <img src="" alt="">
+          <img src="Assets/hero.jpg" alt="">
           <h1>Fuel Your Fitness Journey with FitSphere</h1>
         </div>
     </header>
@@ -42,21 +42,20 @@
       <section id="about-us"> 
         <h2>About Us</h2>
         <div id="about-us-content">
-        <img src="" alt="">
-        <p>
-           At FitSphere, we believe fitness should be accessible to everyone. That's why we offer premium supplements to enhance your health and provide free, expertly crafted diet and workout plans to help you reach your goals. 
-           Join us in creating a healthier world, one step at a time.
-        </p>
+          <img src="Assets/About-Us.jpg" alt="A man trying to block the volleyball">
+          <p>
+            At FitSphere, we believe fitness should be accessible to everyone. That's why we offer premium supplements to enhance your health and provide free, expertly crafted diet and workout plans to help you reach your goals. 
+            Join us in creating a healthier world, one step at a time.
+          </p>
         </div>
       </section>
       
       <!--Explore FitSphere section-->
+      <h2>Explore FitSphere</h2>
       <section id="explore-section">
-        <h2>Explore FitSphere</h2>
-        
         <!--Explore Fitness Plans-->
         <div id="explore-fitness">
-          <img src="" alt="">
+          <img src="Assets/Fitness.jpg" alt="A man doing pushups">
           <h3>Fitness Plans</h3>
           <p>
           Achieve your fitness goals with workout plans that fit your lifestyle. From beginner to advanced, we've got something for everyone.
@@ -66,7 +65,7 @@
 
         <!--Explore Diet Plans-->
         <div id="explore-diet">
-          <img src="" alt="">
+          <img src="Assets/Diet.jpg" alt="Strawberries, Oranges, and nuts on a bowl with yellow background">
           <h3>Diet Plans</h3>
           <p>
             Fuel your body with nutritious, balanced meal plans designed to support your fitness and health goals.
@@ -76,7 +75,7 @@
 
         <!--Explore Supplements-->
         <div id="explore-supplements">
-          <img src="" alt="">
+          <img src="Assets/Supplements.jpg" alt="A motivational water bottle with time markers for hydration, set against a colorful fruit-filled background.">
           <h3>Supplements</h3>
           <p>
             Discover our range of top-quality supplements to boost your performance and recovery. Shop now and see the difference.
@@ -91,8 +90,14 @@
       </section>
 
     </main>
+    
     <footer>
-      <p>&copy;FitSphere 2024</p>
+      
+      <p>&copy; FitSphere 2024. All Rights Reserved.</p>
+      <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+      </div>
     </footer>
   </body>
 </html>
