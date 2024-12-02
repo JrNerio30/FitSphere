@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 100,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nihil, eveniet amet maiores iure totam, quod quisquam corporis repellendus provident, at earum suscipit nulla neque! Autem saepe vero rerum quae.",
+    "img": "https://images.unsplash.com/photo-1732832133237-d947499e75d2?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "price": 200,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nihil, eveniet amet maiores iure totam, quod quisquam corporis repellendus provident, at earum suscipit nulla neque! Autem saepe vero rerum quae.",
+    "img": "https://images.unsplash.com/photo-1674227641622-95defa6ae7e3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "name": "Product 3",
+    "price": 1500,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nihil, eveniet amet maiores iure totam, quod quisquam corporis repellendus provident, at earum suscipit nulla neque! Autem saepe vero rerum quae.",
+    "img": "https://images.unsplash.com/photo-1731167890908-3c38a887bbae?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

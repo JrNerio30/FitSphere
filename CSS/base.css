@@ -1,0 +1,419 @@
+
+:root {
+    --light-peach: #FFE9CE;
+    --charcoal: #1A1F24;
+    --teal: #1A9986;
+    --golden-orange: #C5630C;
+    --muted-brown: #A47F6F;
+}
+
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: var(--light-peach);
+    color: var(--charcoal);
+}
+
+/* Header styling */
+header {
+    width: 100%;
+    background-color: var(--charcoal);
+    color: var(--light-peach);
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav img {
+    width: 400px;
+    height: auto;
+}
+
+
+#nav-bar {
+    display: flex;
+    gap: 20px;
+}
+
+#nav-bar a {
+    color: var(--light-peach);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#nav-bar a:hover {
+    background-color: var(--teal);
+    color: var(--charcoal);
+    border-radius: 4px;
+}
+
+/* Account login */
+#account-login {
+    display: flex;
+    gap: 10px;
+}
+
+#account-login button {
+    background-color: var(--golden-orange);
+    color: var(--charcoal);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#account-login button:hover {
+    background-color: var(--muted-brown);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    color: var(--light-peach);
+    background-color: var(--golden-orange);
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+/* Hero Banner */
+#hero-banner {
+    position: relative; /* Needed for absolute positioning of the text */
+    text-align: center;
+    padding: 0; /* Remove padding to make the image fill the area */
+    height: 100ch; /* Ensure the hero section has a fixed height */
+    background-color: var(--charcoal);
+}
+
+#hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure the image covers the area without distorting */
+}
+
+/* Overlay to create the fade effect */
+#hero-banner::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Adjust to control how much of the image fades */
+    background: linear-gradient(to top, transparent, var(--charcoal)); /* Fade to black from the top */
+}
+
+/* Centering the text */
+#hero-banner h1 {
+    position: absolute;
+    top: 50%; /* Vertical centering */
+    left: 50%; /* Horizontal centering */
+    transform: translate(-50%, -50%); /* Offset to truly center */
+    font-family: 'Raleway', sans-serif;
+    font-size: 10ch;
+    text-transform: uppercase;
+    color: var(--light-peach);
+    z-index: 1; /* Ensure text appears above the image and overlay */
+}
+
+
+/* Main content */
+main {
+    margin: 0 5%; /* Adds 10% margin on the left and right */
+    padding: 0 2ch; /* Optional: adds inner space to prevent text from touching the edges */
+}
+
+/* Optional: You can add additional padding or margins for specific sections inside main if needed */
+section {
+    padding: 20px;
+}
+
+/* Paragraph styling */
+p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal);
+}
+
+/* Headings */
+h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+
+/* Buttons */
+button {
+    background-color: var(--golden-orange); 
+    color: var(--light-peach);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--muted-brown); 
+}
+
+/* About Us Section */
+#about-us {
+    display: flex;
+    flex-direction: column; /* Default to vertical layout */
+    align-items: center;
+    text-align: center; /* Center text for smaller screens */
+    margin: 40px 0;
+    margin-bottom: 20ch;
+    padding: 20px;
+    background-color: var(--light-peach); 
+    border-radius: 8px;
+    
+}
+
+#about-us h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--charcoal);
+}
+
+#about-us-content {
+    display: flex;
+    gap: 20px;
+    flex-direction: row; /* Switch to horizontal layout for larger screens */
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Align text to the left */
+}
+
+#about-us-content img {
+    width: 100%; /* Default for larger screens */
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    border-radius: 5px; /* Optional for aesthetics */
+}
+
+#about-us-content p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    color: var(--charcoal);
+    max-width: 600px; /* Restrict the width for better readability */
+    line-height: 1.6;
+}
+
+/* Explore Section */
+#explore-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures elements wrap to the next row if needed */
+}
+
+/* Individual Explore Item Styling */
+#explore-section div {
+    flex: 1;
+    min-width: 250px; /* Ensures elements don't shrink below a certain size */
+    max-width: 800px;
+    text-align: center; /* Centers content inside each section */
+    padding: 5ch;
+    border: 1px solid #ddd; /* Optional: for better visualization */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--light-peach);
+}
+
+#explore-section div p {
+    text-align: left;
+}
+/* Images inside Explore Section */
+#explore-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Contact Us Section Styling */
+#contact-us-section {
+    text-align: center;
+    background-color: var(--light-peach);
+    padding: 40px 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+#contact-us-section h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--golden-orange);
+    color: var(--light-peach);
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+    background-color: var(--muted-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--charcoal);
+    color: var(--light-peach);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--light-peach);
+}
+
+footer a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--golden-orange);
+}
+
+/* Optional Footer Links or Icons */
+footer .footer-links {
+    margin-top: 10px;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    nav img {
+        width: 300px;
+        height: auto;
+    }
+
+    #nav-bar {
+        display: none;
+        
+    }
+
+    #nav-bar.active{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--charcoal);
+        padding: 10px 20px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 8;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero-banner h1{
+        font-size: 6ch;
+    }
+
+    #about-us-content {
+        flex-direction: column; /* Switch to vertical layout for smaller screens */
+    }
+
+    #about-us-content img {
+        width: 100%; /* Medium size for mid-sized screens */
+    }
+}
+
+@media (max-width: 700px) {
+    nav img {
+        width: 200px;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero-banner h1{
+        font-size: 6ch;
+    }
+
+    #about-us-content {
+        flex-direction: column; /* Switch to vertical layout for smaller screens */
+    }
+
+    #about-us-content img {
+        width: 100%; /* Smaller size for small screens */
+        margin-right: 0; /* Center image for smaller layouts */
+    }
+
+    #explore-section {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 30px;
+    }
+
+    #explore-section > div {
+        max-width: 100%; /* Ensure it takes full width */
+    }
+}
