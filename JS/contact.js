@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('messageError').textContent = 'Message is required.';
       }
       
-      // If valid, proceed with form submission (e.g., using fetch or AJAX)
+      // If valid, proceed with form submission
       if (isValid) {
         form.submit(); // Only submit if all validations pass
       }
