@@ -24,8 +24,8 @@
 
         <!--Account Management Options-->
         <div id="account-login">
-            <button onclick="location.href='sign-up.html'">Sign Up</button>
-            <button onclick="location.href='log-in.html'">Log In</button>          
+            <a href="sign-up.html">Sign Up</a>
+            <a href="log-in.html">Log In</a>
           </div>
       </nav>
     </header>
@@ -36,23 +36,23 @@
         <h1>Sign Up</h1>
         <form id="signup-form">
           <div>
-            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            <input type="text" id="first-name" name="first-name" placeholder="First Name">
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name">
           </div>
           <div class="signup-field">
-            <input type="date" id="birthday" name="birthday" required>
+            <input type="date" id="birthday" name="birthday">
           </div>
           <div class="signup-field">
-            <input type="text" id="gender" name="gender" placeholder="Gender" required>
+            <input type="text" id="gender" name="gender" placeholder="Gender">
           </div>
           <div class="signup-field">
-            <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
+            <input type="tel" id="phone" name="phone" placeholder="123 456 7890">
           </div>
           <div class="signup-field">
-            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="email" id="email" name="email" placeholder="Email">
           </div>
           <div class="signup-field">
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Password">
           </div>
           <!--Should produce success pop up message -->
           <button type="submit" class="signup-button">Sign Up</button>
