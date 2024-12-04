@@ -73,7 +73,9 @@ nav img {
 }
 
 
-/*INDEX HTML*/
+
+
+/*INDEX HTML STYLING*/
 /* Hero Banner */
 #hero-banner {
     position: relative; /* Needed for absolute positioning of the text */
@@ -114,11 +116,6 @@ nav img {
 }
 
 
-/* Main content */
-main {
-    margin: 0 5%; /* Adds 10% margin on the left and right */
-    padding: 0 2ch; /* Optional: adds inner space to prevent text from touching the edges */
-}
 
 /* Optional: You can add additional padding or margins for specific sections inside main if needed */
 section {
@@ -149,22 +146,6 @@ h2 {
 h3 {
     font-size: 24px;
     margin-bottom: 15px;
-}
-
-
-/* Buttons */
-button {
-    background-color: var(--golden-orange); 
-    color: var(--light-peach);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: var(--muted-brown); 
 }
 
 /* About Us Section */
@@ -265,10 +246,11 @@ button:hover {
 .contact-button {
     display: inline-block;
     background-color: var(--golden-orange);
-    color: var(--light-peach);
+    color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 3ch;
+    font-weight: bold;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
@@ -277,10 +259,11 @@ button:hover {
 }
 
 .contact-button:hover {
-    background-color: var(--muted-brown);
+    background-color: var(--teal);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 
 /* CONTACT-US FORM STYLING */
@@ -345,3 +328,5 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+
