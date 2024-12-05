@@ -122,6 +122,9 @@ aside.cart-modal-aside.open{
   left: 35px;
 }
 
+/* ///////////////////////////////////////////////////////////
+                    NOTHING IN CART LAYOUT
+////////////////////////////////////////////////////////////*/
 .nothing-in-cart{
   color: black;
   display: flex;
@@ -147,6 +150,10 @@ button.continue-shopping{
   font-weight: bold;
 }
 
+/* ///////////////////////////////////////////////////////////
+                        COUPON STYLES
+////////////////////////////////////////////////////////////*/
+
 .coupon-container{
   display: flex;
   flex-direction: row;
@@ -169,12 +176,14 @@ button.continue-shopping{
 
 .apply-coupon {
   padding: 0.8rem 1.5rem;
+  font-size: .8rem;
   background-color: var(--golden-orange);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: bold;
 
   &:hover{
     background-color: var(--teal);
@@ -223,11 +232,19 @@ a.return-to-home img{
 }
 
 .checkout-container {
+  margin: 0;
   padding: 2rem;
   background-color: var(--light-peach);
   width: 100%;
   max-width: 600px;
   z-index: 2;
+}
+
+#checkoutForm{
+  margin: 0;
+  background-color: var(--light-peach);
+  box-shadow: none;
+  border: none;
 }
 
 .checkout-container h2 {
@@ -270,15 +287,18 @@ a.return-to-home img{
   flex-direction: column;
 }
 
-.submit-order {
+.checkout-buttons .submit-order {
   padding: 1rem;
+  margin: 0;
   background-color: var(--golden-orange);
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: .8rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  max-width: fit-content;
+  font-weight: bold;
 
   &:hover{
     background-color: var(--teal);
@@ -302,7 +322,7 @@ a.return-to-home img{
   text-decoration: none;
 }
 
-/* ////////////////////////////////////////////////////////////
+/* ///////////////////////////////////////////////////////////
                       MEDIA QUERIES
 ////////////////////////////////////////////////////////////*/
 @media (max-width: 700px) {
