@@ -3,64 +3,114 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fitness Plans</title>
-    <meta name="description" content="Fitness plans">
+    <title>FitSphere</title>
+    <meta name="description" content="FitSphere homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="../JS/base.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/Cart/cart-system.css"> 
+    <script src="../JS/index.js" defer></script>
+    <script src="../JS/cart.js" defer></script>
+    <script src="https://kit.fontawesome.com/879ba98a23.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
         <!--Navigation Bar Menu-->
-        <img src="" alt="FitSphere Logo">
+        <a href="../index.html"><img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo"></a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="nav-bar">
-            <a href="../index.html">Home</a>
-            <a href="../Pages/shop-products.html">Shop</a>
-            <a href="../Pages/diet-plans.html">Diet Plans</a>
-            <a href="../Pages/fitness-plans.html">Fitness Plans</a>
-            <a href="../Pages/about-us.html">About Us</a>
-          </div>
-
+          <a href="../index.html">Home</a>
+          <a href="../Pages/shop-products.html">Shop</a>
+          <a href="../Pages/diet-plans.html">Diet Plans</a>
+          <a href="../Pages/fitness-plans.html">Fitness Plans</a>
+          <a href="../Pages/about-us.html">About Us</a>
         <!--Account Management Options-->
-        <div id="account-login">
-            <button onclick="location.href='sign-up.html'">Sign Up</button>
-            <button onclick="location.href='log-in.html'">Log In</button>          
+          <a class="login-button" href="../User/log-in.html">Log In</a>
+          <a class="sign-button" href="../User/sign-up.html">Sign Up</a>
+          <div class="cart-container">
+            <button class="cart-button" id="openCartModal"><i class="fa-solid fa-cart-shopping"></i></button>
+            <p id="cartCount">0</p>
           </div>
+        </div>
       </nav>
     </header>
+    <aside class="cart-modal" id="cartModal">
+      <section class="cart-modal-header">
+        <button id="closeCartModal" class="close-cart-modal"><i class="fa-solid fa-xmark"></i></button>
+        <h2>Cart</h2>
+        <p id="cartTotalItems" class="cart-total-items">Total: $0</p>
+      </section>
+      <section class="cart-modal-content-container" id="cartModalContentContainer">        
+        <section class="cart-modal-content">
+          <div class="nothing-in-cart" id="nothingInCart">
+            <h3>Your cart is empty</h3>
+            <button class="continue-shopping" id="continueShopping">Continue Shopping</button>
+          </div>
+          <div class="cart-items-container" id="cartItemsContainer">
+          </div>
+        </section>
+      </section>
+      <div class="cart-modal-footer" id="cartModalFooter">
+        <p id="cartTotalPrice" class="cart-total-price">Total: $0</p>
+        <a href="../Cart/checkout.html" class="checkout" id="checkout">Checkout</a>
+        <a href="../Cart/cart.html" class="view-cart">View Cart</a>
+      </div>
+    </aside>
 
     <main>
-        <!-- Logo -->
-        <img src="" alt="FitSphere Icon">
-        <h1>Sign Up</h1>
-        <form id="signup-form">
-          <div>
-            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-          </div>
-          <div class="signup-field">
-            <input type="date" id="birthday" name="birthday" required>
-          </div>
-          <div class="signup-field">
-            <input type="text" id="gender" name="gender" placeholder="Gender" required>
-          </div>
-          <div class="signup-field">
-            <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
-          </div>
-          <div class="signup-field">
-            <input type="email" id="email" name="email" placeholder="Email" required>
-          </div>
-          <div class="signup-field">
-            <input type="password" id="password" name="password" placeholder="Password" required>
-          </div>
-          <!--Should produce success pop up message -->
-          <button type="submit" class="signup-button">Sign Up</button>
-        </form>
-      </main>
-
+      <!-- Logo -->
+      <img src="" alt="FitSphere Icon">
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <div>
+          <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+          <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+        </div>
+        <div class="signup-field">
+          <input type="date" id="birthday" name="birthday" required>
+        </div>
+        <div class="signup-field">
+          <input type="text" id="gender" name="gender" placeholder="Gender" required>
+        </div>
+        <div class="signup-field">
+          <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
+        </div>
+        <div class="signup-field">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="signup-field">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <!--Should produce success pop up message -->
+        <button type="submit" class="signup-button">Sign Up</button>
+      </form>
+    </main>
     <footer>
-      <p>&copy;FitSphere 2024</p>
+      
+      <p>&copy; FitSphere 2024. All Rights Reserved.</p>
+      <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+      </div>
     </footer>
+        
+    <!-- Hidden Elements  -->
+    <div class="hidden-elements">
+      <section class="products-container" id="listProductsContainer">
+      </section>
+      <button class="cart-modal-header-button" id="openCartSummary">Cart Summary <i class="fa-solid fa-chevron-down"></i></button>
+      <aside class="cart-modal-aside" id="cartSummary"> 
+      </aside>
+      <section class="cart-main" id="userCartMain">
+      </section>
+    </div>
   </body>
+    <!-- Hidden Elements  -->
+    <style>
+      .hidden-elements{
+        display: none;
+      }
+    </style>
 </html>
