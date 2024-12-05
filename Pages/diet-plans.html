@@ -3,41 +3,68 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Diet Plans</title>
-    <meta name="description" content="Diet plans">
+    <title>FitSphere</title>
+    <meta name="description" content="FitSphere homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="../JS/base.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/Cart/cart-system.css">
+    <script src="../JS/index.js" defer></script>
+    <script src="../JS/cart.js" defer></script>
+    <script src="https://kit.fontawesome.com/879ba98a23.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
         <!--Navigation Bar Menu-->
-        <img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo">
+        <a href="../index.html"><img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo"></a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="nav-bar">
           <a href="../index.html">Home</a>
-          <a href="shop-products.html">Shop</a>
-          <a href="diet-plans.html">Diet Plans</a>
-          <a href="fitness-plans.html">Fitness Plans</a>
-          <a href="about-us.html">About Us</a>
-          
-        </div>
-
+          <a href="../Pages/shop-products.html">Shop</a>
+          <a href="../Pages/diet-plans.html">Diet Plans</a>
+          <a href="../Pages/fitness-plans.html">Fitness Plans</a>
+          <a href="../Pages/about-us.html">About Us</a>
         <!--Account Management Options-->
-        <div id="account-login">
-          <button onclick="location.href='../User/sign-up.html'">Log In</button>
-          <button onclick="location.href='../User/log-in.html'">Sign Up</button>          
+          <a class="login-button" href="../User/log-in.html">Log In</a>
+          <a class="sign-button" href="../User/sign-up.html">Sign Up</a>
+          <div class="cart-container">
+            <button class="cart-button" id="openCartModal"><i class="fa-solid fa-cart-shopping"></i></button>
+            <p id="cartCount">0</p>
+          </div>
         </div>
       </nav>
     </header>
+    <aside class="cart-modal" id="cartModal">
+      <section class="cart-modal-header">
+        <button id="closeCartModal" class="close-cart-modal"><i class="fa-solid fa-xmark"></i></button>
+        <h2>Cart</h2>
+        <p id="cartTotalItems" class="cart-total-items">Total: $0</p>
+      </section>
+      <section class="cart-modal-content-container" id="cartModalContentContainer">        
+        <section class="cart-modal-content">
+          <div class="nothing-in-cart" id="nothingInCart">
+            <h3>Your cart is empty</h3>
+            <button class="continue-shopping" id="continueShopping">Continue Shopping</button>
+          </div>
+          <div class="cart-items-container" id="cartItemsContainer">
+          </div>
+        </section>
+      </section>
+      <div class="cart-modal-footer" id="cartModalFooter">
+        <p id="cartTotalPrice" class="cart-total-price">Total: $0</p>
+        <a href="../Cart/checkout.html" class="checkout" id="checkout">Checkout</a>
+        <a href="../Cart/cart.html" class="view-cart">View Cart</a>
+      </div>
+    </aside>
 
     <main>
-        <!--Diet Plans Section-->
-        <section id="diet-plans-section">
-          <h1>Diet Plans</h1>
+      <!--Diet Plans Section-->
+      <section id="diet-plans-section">
+        <h1>Diet Plans</h1>
 
-            <!--Diet Plan Article 1-->
-
+          <!--Diet Plan Article 1-->
             <article class="diet-plans">
                 <img src="" alt="" class="diet-image">
                 <div class="diet-content">
@@ -45,10 +72,9 @@
                 <p>The Mediterranean diet consists of mainly eating fruits and veggies, alongside fish seafood as the main source of nutrition. This diet has been known to provide anti-inflammatory benefits as this diet focuses on a reduced consumption of processed foods.</p>
                 <a href="https://www.delish.com/cooking/nutrition/g27258355/mediterranean-diet-recipes/?utm_source=google&utm_medium=cpc&utm_campaign=mgu_ga_del_md_pmx_hybd_mix_ca_18639947754&gad_source=1&gclid=CjwKCAiA9bq6BhAKEiwAH6bqoKtdBbd-thCzEgg5kCJcKvJh7oruadhWCvlZ0zbzC9oD1fKeFBjI7BoC_MsQAvD_BwE"  target="_blank">Find Recipes</a>
               </div>
-            </article>
+        </article>
 
-            <!--Diet Plan Article 2-->
-
+          <!--Diet Plan Article 2-->
             <article class="diet-plans">
                 <img src="" alt="" class="diet-image">
                 <div class="diet-content">
@@ -58,8 +84,7 @@
               </div>
             </article>
 
-            <!--Diet Plan Article 3-->
-
+          <!--Diet Plan Article 3-->
             <article class="diet-plans">
                 <img src="" alt="" class="diet-image">
                 <div class="diet-content">
@@ -70,13 +95,13 @@
             </article>
         </section>
 
-        <section id="contact-us-section">
-          <h2>Need Help or Have Questions?</h2>
-          <a href="Pages/contact-us.html" class="contact-button">Contact Us</a>
-        </section>
 
-    </main>
+      <section id="contact-us-section">
+        <h2>Need Help or Have Questions?</h2>
+        <a href="contact-us.html" class="contact-button">Contact Us</a>
+      </section>
 
+  </main>
     <footer>
       <p>&copy; FitSphere 2024. All Rights Reserved.</p>
       <div class="footer-links">
@@ -84,5 +109,22 @@
           <a href="#">Terms of Service</a>
       </div>
     </footer>
-  </body>
+
+  <!-- Hidden Elements  -->
+  <div class="hidden-elements">
+    <section class="products-container" id="listProductsContainer">
+    </section>
+    <button class="cart-modal-header-button" id="openCartSummary">Cart Summary <i class="fa-solid fa-chevron-down"></i></button>
+    <aside class="cart-modal-aside" id="cartSummary"> 
+    </aside>
+    <section class="cart-main" id="userCartMain">
+    </section>
+  </div>
+</body>
+  <!-- Hidden Elements  -->
+  <style>
+      .hidden-elements{
+        display: none;
+      }
+  </style>
 </html>

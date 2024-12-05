@@ -1,4 +1,25 @@
 
+:root {
+    --light-peach: #FFE9CE;
+    --charcoal: #1A1F24;
+    --teal: #1A9986;
+    --golden-orange: #C5630C;
+    --muted-brown: #cc521e;
+}
+
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-peach);
+    color: var(--charcoal);
+}
+
 /* Header styling */
 header {
     width: 100%;
@@ -45,14 +66,26 @@ nav img {
     gap: 10px;
 }
 
-#account-login button {
+.login-button{
+    background-color: transparent;
+    border: 1px solid var(--golden-orange);
+    color: var(--light-peach);
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.sign-button {
     background-color: var(--golden-orange);
-    color: var(--charcoal);
+    color: var(--light-peach);
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 #account-login button:hover {
@@ -69,7 +102,8 @@ nav img {
     font-size: 2rem;
     cursor: pointer;
     position: relative;
-    z-index: 10;
+    z-index: 3;
+    padding-inline: .9rem;
 }
 
 
@@ -118,7 +152,7 @@ nav img {
 
 
 /* Optional: You can add additional padding or margins for specific sections inside main if needed */
-section {
+main section {
     padding: 20px;
 }
 
@@ -146,6 +180,21 @@ h2 {
 h3 {
     font-size: 24px;
     margin-bottom: 15px;
+}
+
+/* Buttons */
+main button {
+    background-color: var(--golden-orange); 
+    color: var(--light-peach);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--muted-brown); 
 }
 
 /* About Us Section */
@@ -309,11 +358,53 @@ form h1 {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--teal);
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+/* Responsive Design */
+@media (max-width: 1200px) {
+    nav img {
+        width: 300px;
+        height: auto;
+    }
+
+    #nav-bar {
+        display: none;
+        
+    }
+
+    #nav-bar.active{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 2rem 1rem;
+        background-color: var(--charcoal);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero-banner h1{
+        font-size: 6ch;
+    }
+
+    #about-us-content {
+        flex-direction: column; /* Switch to vertical layout for smaller screens */
+    }
+
+    #about-us-content img {
+        width: 100%; /* Medium size for mid-sized screens */
+    }
+  
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--teal);
+        outline: none;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
 .form-group textarea {

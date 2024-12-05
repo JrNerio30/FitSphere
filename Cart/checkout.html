@@ -1,37 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Shopping Cart</title>
-    <meta name="description" content="">
+    <title>FitSphere</title>
+    <meta name="description" content="FitSphere homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/Cart/checkout.css">  
+    <script src="../JS/index.js" defer></script>
+    <script src="../JS/cart.js" defer></script>
+    <script src="https://kit.fontawesome.com/879ba98a23.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
         <!--Navigation Bar Menu-->
-        <img src="" alt="FitSphere Logo">
+        <a  href="../index.html" class="return-to-home"><img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo"></a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="nav-bar">
           <a href="../index.html">Home</a>
           <a href="../Pages/shop-products.html">Shop</a>
           <a href="../Pages/diet-plans.html">Diet Plans</a>
           <a href="../Pages/fitness-plans.html">Fitness Plans</a>
           <a href="../Pages/about-us.html">About Us</a>
-        </div>
-
         <!--Account Management Options-->
-        <div id="account-login">
-          <button onclick="location.href='../User/sign-up.html'">Sign Up</button>
-          <button onclick="location.href='../User/log-in.html'">Log In</button>          
+          <a class="login-button" href="../User/log-in.html">Log In</a>
+          <a class="sign-button" href="../User/sign-up.html">Sign Up</a>
+          <div class="cart-container">
+            <button class="cart-button" id="openCartModal"><i class="fa-solid fa-cart-shopping"></i></button>
+            <p id="cartCount">0</p>
+          </div>
         </div>
       </nav>
     </header>
+
     
-    <footer>
-      <p>&copy;FitSphere 2024</p>
-    </footer>
+    <aside class="cart-modal" id="cartModal">
+      <section class="cart-modal-content-container" id="cartModalContentContainer"> 
+        <section class="checkout-container">
+          <a href="../index.html" class="return-to-home"><img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo"></a>
+          <h2>Checkout</h2>
+          <form id="checkoutForm">
+            <!-- Contact Information -->
+            <div class="form-section">
+              <h3>Contact Information</h3>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" required>
+              
+              <label for="phone">Phone Number</label>
+              <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+            </div>
+        
+            <!-- Shipping Address -->
+            <div class="form-section">
+              <h3>Shipping Address</h3>
+              <label for="fullName">Full Name</label>
+              <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+              
+              <label for="address">Street Address</label>
+              <input type="text" name="address" id="address" placeholder="Street Address" required>
+              
+              <label for="apartment">Apartment, suite, etc. (optional)</label>
+              <input type="text" name="apartment" id="apartment" placeholder="Apartment, suite, etc. (optional)">
+              
+              <label for="city">City</label>
+              <input type="text" name="city" id="city" placeholder="City" required>
+              
+              <label for="country">Country</label>
+              <select name="country" id="country" required>
+                <option value="">Select Country</option>
+                <option value="US">United States</option>
+                <!-- Add more countries as needed -->
+              </select>
+              
+              <label for="state">State</label>
+              <select name="state" id="state" required>
+                <option value="">Select State</option>
+                <option value="CA">California</option>
+                <!-- Add more states as needed -->
+              </select>
+              
+              <label for="zipCode">ZIP Code</label>
+              <input type="text" name="zipCode" id="zipCode" placeholder="ZIP Code" required>
+            </div>
+        
+            <!-- Payment Information -->
+            <div class="form-section">
+              <h3>Payment Information</h3>
+              <label for="cardName">Name on Card</label>
+              <input type="text" name="cardName" id="cardName" placeholder="Name on Card" required>
+              
+              <label for="cardNumber">Card Number</label>
+              <input type="text" name="cardNumber" id="cardNumber" placeholder="Card Number" required>
+              
+              <div class="card-details">
+                <div class="card-details-item">
+                  <label for="expiry">MM/YY</label>
+                  <input type="text" name="expiry" id="expiry" placeholder="MM/YY" required>
+                </div>
+                <div class="card-details-item">
+                  <label for="cvv">CVV</label>
+                  <input type="text" name="cvv" id="cvv" placeholder="CVV" required>
+                </div>
+              </div>
+            </div>
+        
+            <div class="checkout-buttons">
+              <a href="cart.html" class="return-to-cart"><i class="fa-solid fa-arrow-left"></i> Return to Cart</a>
+              <button type="submit" class="submit-order">Place Order</button>
+            </div>
+          </form>
+        </section>
+        <section class="cart-modal-content">
+          <summary class="cart-sticky-container">
+            <div class="cart-modal-header">
+              <button id="closeCartModal" class="close-cart-modal"><i class="fa-solid fa-xmark"></i></button>
+              <button class="cart-modal-header-button" id="openCartSummary">Cart Summary <i class="fa-solid fa-chevron-down"></i></button>
+              <p id="cartTotalItems" class="cart-total-items"></p>
+            </div>
+            
+            <aside class="cart-modal-aside" id="cartSummary"> 
+              <div class="nothing-in-cart" id="nothingInCart">
+                <h3>Your cart is empty</h3>
+                <button class="continue-shopping" id="continueShopping">Continue Shopping</button>
+              </div>
+              
+              <div class="cart-items-container" id="cartItemsContainer">
+              </div>
+    
+              <div class="coupon-container">
+                <input type="text" name="couponCode" id="couponCode" placeholder="Enter discount code">
+                <button type="button" id="applyCoupon" class="apply-coupon">Apply</button>
+              </div>
+    
+              <p id="cartTotalPrice" class="cart-total-price">Total: $0</p>
+            </aside>
+            
+            <!-- Hidden Footer -->
+            <div class="cart-modal-footer" id="cartModalFooter">
+              <a href="Cart/checkout.html" class="checkout" id="checkout">Checkout</a>
+              <a href="Cart/cart.html" class="view-cart">View Cart</a>
+            </div>
+          </summary>
+        </section>
+      </section>
+    </aside>
+
+    <!-- Hidden Elements -->
+    <section class="products-container" id="listProductsContainer">
+    </section>
+    <section class="cart-main" id="userCartMain">
+    </section>
   </body>
+  <!-- Hidden Elements -->
+  <style>
+    header,
+    .cart-container,
+    .cart-total-items,
+    .cart-item-quantity,
+    .nothing-in-cart.removed,
+    .cart-modal-footer,
+    .cart-item-info-text button,
+    .close-cart-modal,
+    .products-container,
+    .cart-main{
+      display: none;
+    }
+  </style>
 </html>
