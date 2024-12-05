@@ -11,14 +11,12 @@ let carts = [];
 // Opens the cart modal
 openCartModal.addEventListener("click", () => {
   cartModal.classList.add("active");
-  overlay.classList.add("active");
   cartModalContentContainer.classList.add("active");
 });
 
 // Closes the cart modal
 closeCartModal.addEventListener("click", () => {
   cartModal.classList.remove("active");
-  overlay.classList.remove("active");
   cartModalContentContainer.classList.remove("active");
 });
 
@@ -26,7 +24,6 @@ closeCartModal.addEventListener("click", () => {
 continueShopping.addEventListener("click", () => {
   cartModal.classList.remove("active");
   cartModalContentContainer.classList.remove("active");
-  overlay.classList.remove("active");
 });
 
 // Resets when user presses on buy right after checkout
@@ -184,6 +181,7 @@ const addCartToHTML = () => {
   if (carts.length > 0) {
     cartModalFooter.classList.add("active");
     nothingInCart.classList.add("removed");
+    userCartMain.classList.remove("no-items");
     carts.forEach((cart) => {
       totalQuantity += cart.quantity;
 
@@ -204,16 +202,17 @@ const addCartToHTML = () => {
               </figure>
               <div class="cart-item-info-text">
                 <h3>${info.name}</h3>
+                <div class="cart-item-quantity-price">
                 <p class="cart-item-price">$${info.price * cart.quantity}</p>
-                <button class="remove-cart-item" data-id="${
-                  info.id
-                }">Remove</button>
+                  <p class="cart-item-quantity-count remove-cart-view">Quantity: ${cart.quantity}</p>
+                </div>
+                <button class="remove-cart-item" data-id="${info.id}">Remove</button>
               </div>
             </div>
             <div class="cart-item-quantity">
-              <button class="decrease-cart-item-quantity">-</button>
-              <p class="cart-item-quantity-count">${cart.quantity}</p>
               <button class="increase-cart-item-quantity">+</button>
+              <p class="cart-item-quantity-count">${cart.quantity}</p>
+              <button class="decrease-cart-item-quantity">-</button>
             </div>
       `;
       cartItemsContainer.appendChild(newCartItem);
@@ -221,10 +220,11 @@ const addCartToHTML = () => {
   } else {
     cartModalFooter.classList.remove("active");
     nothingInCart.classList.remove("removed");
+    userCartMain.classList.add("no-items");
   }
   cartCount.textContent = totalQuantity;
   cartTotalItems.textContent = `${totalQuantity} items`;
-  cartTotalPrice.textContent = `Total: $${totalPrice}`;
+  cartTotalPrice.innerHTML = `Total: <span>$${totalPrice}</span>`;
 };
 
 /*///////////////////////////////////////////////////////////
