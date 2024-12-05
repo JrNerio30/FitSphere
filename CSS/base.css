@@ -106,6 +106,10 @@ nav img {
     padding-inline: .9rem;
 }
 
+
+
+
+/*INDEX HTML STYLING*/
 /* Hero Banner */
 #hero-banner {
     position: relative; /* Needed for absolute positioning of the text */
@@ -146,11 +150,6 @@ nav img {
 }
 
 
-/* Main content */
-main {
-    margin: 0 5%; /* Adds 10% margin on the left and right */
-    padding: 0 2ch; /* Optional: adds inner space to prevent text from touching the edges */
-}
 
 /* Optional: You can add additional padding or margins for specific sections inside main if needed */
 main section {
@@ -182,7 +181,6 @@ h3 {
     font-size: 24px;
     margin-bottom: 15px;
 }
-
 
 /* Buttons */
 main button {
@@ -297,10 +295,11 @@ button:hover {
 .contact-button {
     display: inline-block;
     background-color: var(--golden-orange);
-    color: var(--light-peach);
+    color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 3ch;
+    font-weight: bold;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
@@ -309,48 +308,54 @@ button:hover {
 }
 
 .contact-button:hover {
-    background-color: var(--muted-brown);
+    background-color: var(--teal);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer Styling */
-footer {
-    background-color: var(--charcoal);
-    color: var(--light-peach);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
-footer p {
-    margin: 0;
+
+/* CONTACT-US FORM STYLING */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    margin-top: 6rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Roboto Condensed', sans-serif;
-    color: var(--light-peach);
 }
 
-footer a {
-    color: var(--teal);
-    text-decoration: none;
+form h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    margin: 0 5px;
-    transition: color 0.3s;
+    color: #555;
 }
 
-footer a:hover {
-    color: var(--golden-orange);
-}
-
-/* Optional Footer Links or Icons */
-footer .footer-links {
-    margin-top: 10px;
-}
-
-footer .footer-links a {
-    margin: 0 10px;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* Responsive Design */
@@ -394,37 +399,25 @@ footer .footer-links a {
     #about-us-content img {
         width: 100%; /* Medium size for mid-sized screens */
     }
+  
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--teal);
+        outline: none;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
-@media (max-width: 700px) {
-    nav img {
-        width: 200px;
-        height: auto;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    #hero-banner h1{
-        font-size: 6ch;
-    }
-
-    #about-us-content {
-        flex-direction: column; /* Switch to vertical layout for smaller screens */
-    }
-
-    #about-us-content img {
-        width: 100%; /* Smaller size for small screens */
-        margin-right: 0; /* Center image for smaller layouts */
-    }
-
-    #explore-section {
-        flex-direction: column; /* Stack elements vertically */
-        gap: 30px;
-    }
-
-    #explore-section > div {
-        max-width: 100%; /* Ensure it takes full width */
-    }
+.form-group textarea {
+    resize: vertical;
 }
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
