@@ -345,55 +345,7 @@ form h1 {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    nav img {
-        width: 300px;
-        height: auto;
-    }
 
-    #nav-bar {
-        display: none;
-        
-    }
-
-    #nav-bar.active{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 2rem 1rem;
-        background-color: var(--charcoal);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        z-index: 2;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    #hero-banner h1{
-        font-size: 6ch;
-    }
-
-    #about-us-content {
-        flex-direction: column; /* Switch to vertical layout for smaller screens */
-    }
-
-    #about-us-content img {
-        width: 100%; /* Medium size for mid-sized screens */
-    }
-  
-    .form-group input:focus,
-    .form-group textarea:focus {
-        border-color: var(--teal);
-        outline: none;
-        box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-    }
-}
 
 .form-group textarea {
     resize: vertical;
@@ -406,6 +358,103 @@ button[type="submit"] {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 5ch;
 }
+
+/*LOG-IN CSS*/
+#login-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    margin-top: 6rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#login-form h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--charcoal);
+}
+
+#login-form p{
+    text-align: center;
+    margin-top: 3ch;
+}
+
+#login-form img {
+    max-width: 20%;
+    height: auto;
+    display: block; /* Make the image a block-level element */
+    margin: 0 auto; /* Center the block element horizontally */
+    margin-bottom: 1ch;
+}
+
+/*SIGN-UP CSS*/
+#signup-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#signup-form h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--charcoal);
+}
+
+#signup-form p{
+    text-align: center;
+    margin-top: 3ch;
+}
+
+#signup-form img {
+    max-width: 20%;
+    height: auto;
+    display: block; /* Make the image a block-level element */
+    margin: 0 auto; /* Center the block element horizontally */
+    margin-bottom: 1ch;
+}
+
+.signup-field {
+    margin-bottom: 1rem;
+}
+
+#first-name{
+    margin-bottom: 1rem;
+}
+
+.signup-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--charcoal);
+}
+
+.signup-field input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
 
 

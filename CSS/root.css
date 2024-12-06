@@ -65,7 +65,7 @@ footer p {
     color: var(--light-peach);
 }
 
-footer a {
+a {
     color: var(--teal);
     text-decoration: none;
     font-weight: bold;
@@ -73,7 +73,7 @@ footer a {
     transition: color 0.3s;
 }
 
-footer a:hover {
+a:hover {
     color: var(--golden-orange);
 }
 
@@ -179,6 +179,14 @@ footer .footer-links a {
     button[type="submit"] {
         font-size: 0.9rem;
     }
+
+    #login-form img {
+        max-width: 30%;
+    }
+
+    #signup-form img {
+        max-width: 30%;
+    }
 }
 
 
@@ -207,6 +215,16 @@ footer .footer-links a {
 /* Large Screens */
 @media (min-width: 1201px) {
     form {
+        max-width: 900px; /* Wider form for large screens */
+        padding: 2rem;
+    }
+
+    #login-form {
+        max-width: 900px; /* Wider form for large screens */
+        padding: 2rem;
+    }
+
+    #signup-form {
         max-width: 900px; /* Wider form for large screens */
         padding: 2rem;
     }
