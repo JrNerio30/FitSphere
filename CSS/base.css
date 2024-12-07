@@ -648,3 +648,109 @@ button[type="submit"] {
         flex-direction:column /* Alternate layout for variety */
     }
 }
+
+/*ABOUT US CSS*/
+#about-us-page {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about-us-page h1 {
+    font-size: 2.5rem;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#about-us-page img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#about-us-page p {
+    font-size: 1.5rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+    padding: 0 15px;
+}
+
+/* Company Values Section */
+#company-values {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.about-us-details {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.about-us-details h2 {
+    font-size: 2rem;
+    color: var(--golden-orange);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.company-statements {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.company-statements img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-statements p {
+    flex: 1;
+    font-size: 1.3rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+    text-align: left;
+    padding: 0 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #about-us-page, #company-values {
+        padding: 10px;
+    }
+
+    #about-us-page p{
+        font-size: 1.1rem;
+    }
+
+    .company-statements {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .company-statements img {
+        margin-bottom: 15px;
+        max-width: 1000px;
+    }
+
+    .company-statements p {
+        font-size: 1rem;
+    }
+
+}
