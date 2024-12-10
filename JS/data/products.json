@@ -4,69 +4,69 @@
     "name": "FitSphere Raw Organic Fiber Capsules",
     "price": 29.99,
     "description": "Promote digestive health and regulate appetite with these natural, plant-based fiber capsules, crafted for optimal gut wellness.",
-    "img": "/assets/products/fiber-supplement.avif"
+    "img": "../Assets/products/fiber-supplement.avif"
   },
   {
     "id": 2,
     "name": "FitSphere White Chocolate Protein Bar",
     "price": 3.99,
     "description": "Indulge in a guilt-free protein boost with our creamy white chocolate bar, perfect for fueling your workouts or as a quick snack on the go.",
-    "img": "/assets/products/protein-bar-white.avif"
+    "img": "../Assets/products/protein-bar-white.avif"
   },
   {
     "id": 3,
     "name": "FitSphere Dark Chocolate Protein Bar",
     "price": 3.99,
     "description": "Satisfy your cravings with this rich dark chocolate protein bar, delivering the perfect balance of flavor and nutrition for active lifestyles. This bar is crafted for those who crave a healthy, delicious snack that supports muscle recovery and energy on the go.",
-    "img": "/assets/products/protein-bar-choco.avif"
+    "img": "../Assets/products/protein-bar-choco.avif"
   },
   {
     "id": 4,
     "name": "FitSphere Gold Standard Protein Powder Jar",
     "price": 79.99,
     "description": "Power your fitness journey with this premium-quality protein powder, designed for muscle recovery and lean muscle building.",
-    "img": "/assets/products/protein-powder.avif"
+    "img": "../Assets/products/protein-powder.avif"
   },
   {
     "id": 5,
     "name": "FitSphere SHIFTED Pre-Workout Powder Jar",
     "price": 14.99,
     "description": "Maximize your energy and focus during workouts with this powerful pre-workout blend, designed to push your limits.",
-    "img": "/assets/products/pre-workout.avif"
+    "img": "../Assets/products/pre-workout.avif"
   },
   {
     "id": 6,
     "name": "FitSphere Fat burning Green Tea Capsules",
     "price": 14.99,
     "description": "Boost your metabolism and support weight management with our potent green tea capsules, enriched with natural fat-burning properties.",
-    "img": "/assets/products/green-extract.avif"
+    "img": "../Assets/products/green-extract.avif"
   },
   {
     "id": 7,
     "name": "FitSphere Bone Strength supplements",
     "price": 19.99,
     "description": "Fortify your bones and support joint health with this essential blend of calcium, vitamin D, and key minerals.",
-    "img": "/assets/products/bone-health.avif"
+    "img": "../Assets/products/bone-health.avif"
   },
   {
     "id": 8,
     "name": "FitSphere Orange Flavored Electrolyte Powder Supplements",
     "price": 29.99,
     "description": "Stay hydrated and refreshed with our zesty orange electrolyte powder. Formulated to replenish essential minerals, it’s perfect for athletes and fitness enthusiasts seeking optimal recovery and endurance.",
-    "img": "/assets/products/electrolyte.avif"
+    "img": "../Assets/products/electrolyte.avif"
   },
   {
     "id": 9,
     "name": "FitSphere IMPACT Creatine Powder",
     "price": 39.99,
     "description": "Elevate your training sessions with FitSphere IMPACT Creatine Powder. Designed to improve strength, power, and muscle recovery, this premium supplement is a must-have for high-intensity workouts.",
-    "img": "/assets/products/creatine.avif"
+    "img": "../Assets/products/creatine.avif"
   },
   {
     "id": 10,
     "name": "FitSphere Mass Gainer Powder",
     "price": 49.99,
     "description": "Take your fitness goals to the next level with our Mass Gainer Powder. Packed with a blend of protein, carbs, and nutrients, it’s ideal for building muscle mass and supporting weight gain in a healthy way.",
-    "img": "/assets/products/mass-gainer.avif"
+    "img": "../Assets/products/mass-gainer.avif"
   }
 ]
