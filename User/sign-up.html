@@ -66,29 +66,32 @@
         <!-- Logo -->
         <img src="../Assets/FitSphere-Icon.svg" alt="FitSphere Icon">
         <h1>Sign Up</h1>
-        <div class="signup-field">
-          <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
-          <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
-        </div>
-        <div class="signup-field">
-          <input type="date" id="birthday" name="birthday" required>
-        </div>
-        <div class="signup-field">
-          <input type="text" id="gender" name="gender" placeholder="Gender" required>
-        </div>
-        <div class="signup-field">
-          <input type="tel" id="phone" name="phone" placeholder="123 456 7890" required>
-        </div>
-        <div class="signup-field">
-          <input type="email" id="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="signup-field">
-          <input type="password" id="password" name="password" placeholder="Password" required>
-        </div>
-        <!--Should produce success pop up message -->
-        <button type="submit" class="signup-button">Sign Up</button>
-      </form>
-    </main>
+
+        <form id="signup-form">
+          <div>
+            <input type="text" id="first-name" name="first-name" placeholder="First Name">
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+          </div>
+          <div class="signup-field">
+            <input type="date" id="birthday" name="birthday">
+          </div>
+          <div class="signup-field">
+            <input type="text" id="gender" name="gender" placeholder="Gender">
+          </div>
+          <div class="signup-field">
+            <input type="tel" id="phone" name="phone" placeholder="123 456 7890">
+          </div>
+          <div class="signup-field">
+            <input type="email" id="email" name="email" placeholder="Email">
+          </div>
+          <div class="signup-field">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </div>
+          <!--Should produce success pop up message -->
+          <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+      </main>
+
     <footer>
       
       <p>&copy; FitSphere 2024. All Rights Reserved.</p>
