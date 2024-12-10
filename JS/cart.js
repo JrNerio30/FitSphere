@@ -1,4 +1,10 @@
 /*///////////////////////////////////////////////////////////
+  FETCHING PRODUCTS
+///////////////////////////////////////////////////////////*/
+
+const fetchingProducts = "../JS/data/products.json"
+
+/*///////////////////////////////////////////////////////////
   ARRAYS TO STORE PRODUCTS AND CART ITEMS
 ///////////////////////////////////////////////////////////*/
 let listProducts = [];
@@ -47,9 +53,10 @@ continueShopping.addEventListener("click", () => {
   - If there are, parse them and add them to the carts array
   - Call the addCartToHTML function to display the cart items
 */
+
 const initApp = async () => {
   try {
-    const response = await fetch("../JS/data/products.json");
+    const response = await fetch(fetchingProducts);
     const data = await response.json();
     listProducts = data;
 
