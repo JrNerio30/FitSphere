@@ -136,10 +136,32 @@ footer .footer-links a {
         font-size: 6ch;
     }
 
+    #about-us-content {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        
+    }
+
+    #about-us-content img {
+        max-width: 100%; /* Ensure the image fits within the container */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px; /* Add space between the image and text */
+    }
+
+    #about-us-content p {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
 
     #explore-section {
         flex-direction: column; /* Stack elements vertically */
         gap: 30px;
+        text-align: center;
+    }
+    
+    #explore-section img {
+        display: block; /* Ensures the image behaves as a block element */
+        margin: 0 auto; /* Centers the image horizontally */
     }
 
     #explore-section > div {
@@ -177,7 +199,7 @@ footer .footer-links a {
 
 
 /* Medium Screens */
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 701px) and (max-width: 1200px) {
     form {
         max-width: 700px;
         padding: 1.5rem;
@@ -195,6 +217,32 @@ footer .footer-links a {
     button[type="submit"] {
         font-size: 1.1rem;
     }
+
+    #about-us-content {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        
+    }
+
+    #about-us-content img {
+        max-width: 80%; /* Slightly smaller image for medium screens */
+        margin-bottom: 20px; /* Add space between the image and text */
+    }
+
+    #about-us-content p {
+        font-size: 1.4rem; /* Adjust font size for readability */
+    }
+
+    #explore-supplements {
+        text-align: center; /* Centers inline content horizontally */
+    }
+    
+    #explore-supplements img {
+        display: block; /* Ensures the image behaves as a block element */
+        margin: 0 auto; /* Centers the image horizontally */
+    }
+    
 }
 
 /* Large Screens */
