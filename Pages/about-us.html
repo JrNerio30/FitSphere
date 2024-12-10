@@ -3,72 +3,122 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Us</title>
-    <meta name="description" content="Learn more about us">
+    <title>FitSphere</title>
+    <meta name="description" content="FitSphere homepage">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <script src="../JS/base.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../CSS/base.css">
+     <link rel="stylesheet" href="../CSS/root.css">
+    <link rel="stylesheet" href="../CSS/Cart/cart-system.css">
+    <script src="../JS/index.js" defer></script>
+    <script src="../JS/cart.js" defer></script>
+    <script src="https://kit.fontawesome.com/879ba98a23.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav>
         <!--Navigation Bar Menu-->
-        <img src="" alt="FitSphere Logo">
+        <a href="../index.html"><img src="../Assets/FitSphere_LogoVar.svg" alt="FitSphere Logo"></a>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
         <div id="nav-bar">
           <a href="../index.html">Home</a>
-          <a href="shop-products.html">Shop</a>
-          <a href="diet-plans.html">Diet Plans</a>
-          <a href="fitness-plans.html">Fitness Plans</a>
-          <a href="about-us.html">About Us</a>
-          
-        </div>
-
+          <a href="../Pages/shop-products.html">Shop</a>
+          <a href="../Pages/diet-plans.html">Diet Plans</a>
+          <a href="../Pages/fitness-plans.html">Fitness Plans</a>
+          <a href="../Pages/about-us.html">About Us</a>
         <!--Account Management Options-->
-        <div id="account-login">
-          <button onclick="location.href='../User/sign-up.html'">Log In</button>
-          <button onclick="location.href='../User/log-in.html'">Sign Up</button>          
+          <a class="login-button" href="../User/log-in.html">Log In</a>
+          <a class="sign-button" href="../User/sign-up.html">Sign Up</a>
+          <div class="cart-container">
+            <button class="cart-button" id="openCartModal"><i class="fa-solid fa-cart-shopping"></i></button>
+            <p id="cartCount">0</p>
+          </div>
         </div>
       </nav>
     </header>
-  
-    <!--About Us-->
+    <aside class="cart-modal" id="cartModal">
+      <section class="cart-modal-header">
+        <button id="closeCartModal" class="close-cart-modal"><i class="fa-solid fa-xmark"></i></button>
+        <h2>Cart</h2>
+        <p id="cartTotalItems" class="cart-total-items">Total: $0</p>
+      </section>
+      <section class="cart-modal-content-container" id="cartModalContentContainer">        
+        <section class="cart-modal-content">
+          <div class="nothing-in-cart" id="nothingInCart">
+            <h3>Your cart is empty</h3>
+            <button class="continue-shopping" id="continueShopping">Continue Shopping</button>
+          </div>
+          <div class="cart-items-container" id="cartItemsContainer">
+          </div>
+        </section>
+      </section>
+      <div class="cart-modal-footer" id="cartModalFooter">
+        <p id="cartTotalPrice" class="cart-total-price">Total: $0</p>
+        <a href="../Cart/checkout.html" class="checkout" id="checkout">Checkout</a>
+        <a href="../Cart/cart.html" class="view-cart">View Cart</a>
+      </div>
+    </aside>
+
     <main>
       
       <section id="about-us-page">
         <h1>About Us</h1>
-        <img src="" alt="">
-        <p>FitSphere was created to empower individuals to feel confident, strong, and at their best. We offer a wide range of resources designed to support and guide you on your fitness journey.</p>
+        <img src="../Assets/About-Us.jpg" alt="" width="600" height="400">
+        <p>At FitSphere, we are passionate about helping people lead healthier, happier lives. As a proudly Canadian company, we combine personalized diet and fitness plans to create a holistic approach to wellness. Our innovative solutions are designed to fit seamlessly into your lifestyle, making health and fitness both accessible and enjoyable. Whether you’re just starting your journey or looking to take your goals to the next level, FitSphere is here to guide and support you every step of the way.
+
+        </p>
       </section>
       
       <!--Our Mission-->
       <section id="company-values">
-        <h2>Our Values</h2>
-        <article id="our-mission">
+        <article class="about-us-details">
           <h2>Our Mission</h2>
           <div class="company-statements">
-            <img src="" alt="">
-            <p>Our mission is to help you to thrive in every aspect of health, so you can feel your best inside and out.</p>
+            <img src="../Assets/mission.jpg" alt="" width="600" height="400">
+            <p>To empower individuals to achieve their health and fitness goals by providing personalized diet plans, effective workout programs, and a supportive community that prioritizes balance, well-being, and sustainable lifestyle changes.</p>
           </div>
-        </article>
+        </article> 
 
         <!--Our Vision-->
-        <article id="our-vision">
+        <article class="about-us-details">
           <h2>Our Vision</h2>
           <div class="company-statements">
-            <img src="" alt="">
-            <p>By empowering individuals, we aim to create a community of healthy, confident people who believe in their abilities.</p>
+            <img src="../Assets/vision.jpg" alt="" width="600" height="400">
+            <p>To become a global leader in health and fitness, inspiring a world where people embrace healthier habits, live more active lives, and achieve their full potential through accessible and innovative wellness solutions. </p>
           </div>
         </article>
       </section>
 
       <section id="contact-us-section">
         <h2>Need Help or Have Questions?</h2>
-        <a href="/contact-us.html" class="contact-button">Contact Us</a>
+        <a href="contact-us.html" class="contact-button">Contact Us</a>
       </section>
 
     </main>
     <footer>
-      <p>&copy;FitSphere 2024</p>
+      <p>&copy; FitSphere 2024. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
     </footer>
+
+    <!-- Hidden Elements  -->
+    <div class="hidden-elements">
+      <section class="products-container" id="listProductsContainer">
+      </section>
+      <button class="cart-modal-header-button" id="openCartSummary">Cart Summary <i class="fa-solid fa-chevron-down"></i></button>
+      <aside class="cart-modal-aside" id="cartSummary"> 
+      </aside>
+      <section class="cart-main" id="userCartMain">
+      </section>
+    </div>
   </body>
+    <!-- Hidden Elements  -->
+    <style>
+      .hidden-elements{
+        display: none;
+      }
+    </style>
 </html>

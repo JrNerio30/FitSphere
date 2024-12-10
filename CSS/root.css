@@ -1,0 +1,232 @@
+:root {
+    --light-peach: #FFE9CE;
+    --charcoal: #1A1F24;
+    --teal: #1A9986;
+    --golden-orange: #C5630C;
+    --muted-brown: #A47F6F;
+}
+
+/* Universal box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: 0 5%; /* Adds 10% margin on the left and right */
+    padding: 0 2ch; /* Optional: adds inner space to prevent text from touching the edges */
+    flex: 1;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: var(--light-peach);
+    color: var(--charcoal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Buttons */
+button {
+    background-color: var(--golden-orange); 
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 3ch;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--teal); 
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--charcoal);
+    color: var(--light-peach);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+footer p {
+    margin: 0;
+    color: var(--light-peach);
+}
+
+a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--golden-orange);
+}
+
+footer .footer-links {
+    margin-top: 10px;
+}
+
+footer .footer-links a {
+    margin: 0 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1201px) {
+    nav img {
+        width: 300px;
+        height: auto;
+    }
+
+    #nav-bar {
+        display: none;
+        
+    }
+
+    #nav-bar.active{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--charcoal);
+        padding: 10px 20px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 8;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero-banner h1{
+        font-size: 6ch;
+    }
+
+}
+
+@media (max-width: 700px) {
+    nav img {
+        width: 200px;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #hero-banner h1{
+        font-size: 6ch;
+    }
+
+
+    #explore-section {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 30px;
+    }
+
+    #explore-section > div {
+        max-width: 100%; /* Ensure it takes full width */
+    }
+
+    /* Responsive Styling for contact html */
+    form {
+        max-width: 90%; /* Take up more width on smaller screens */
+        padding: 1rem;
+    }
+
+    form h1 {
+        font-size: 1.75rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        font-size: 0.9rem;
+    }
+
+    #login-form img {
+        max-width: 30%;
+    }
+
+    #signup-form img {
+        max-width: 30%;
+    }
+}
+
+
+
+/* Medium Screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+    form {
+        max-width: 700px;
+        padding: 1.5rem;
+    }
+
+    form h1 {
+        font-size: 2.25rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.1rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1201px) {
+    form {
+        max-width: 900px; /* Wider form for large screens */
+        padding: 2rem;
+    }
+
+    #login-form {
+        max-width: 900px; /* Wider form for large screens */
+        padding: 2rem;
+    }
+
+    #signup-form {
+        max-width: 900px; /* Wider form for large screens */
+        padding: 2rem;
+    }
+
+    form h1 {
+        font-size: 2.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+}
+
