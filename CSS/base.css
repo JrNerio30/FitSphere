@@ -662,24 +662,32 @@ button[type="submit"] {
 
 #about-us-page h1 {
     font-size: 2.5rem;
-    color: var(--charcoal);
-    margin-bottom: 20px;
+    color: #fff; /* Text color for better contrast */
+    margin: 0; /* Remove default margin */
     text-transform: uppercase;
     letter-spacing: 2px;
+    background: var(--golden-orange); /* Banner background */
+    padding: 20px 0; /* Add padding for banner effect */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
 
+/* General Styling for Images */
 #about-us-page img {
-    width: 100%;
+    width: 100%; /* Ensures image scales with the container */
+    margin: 0; /* Remove any negative margins for consistency */
     height: auto;
-    margin: 20px 0;
-    border-radius: 10px;
+    border-radius: 0; /* Keeps images edge-to-edge */
+    box-sizing: border-box;
 }
 
 #about-us-page p {
-    font-size: 1.5rem;
+    flex: 1;
+    font-size: 1.3rem;
     color: var(--charcoal);
     line-height: 1.8;
+    text-align: left;
     padding: 0 15px;
+    margin-top: 20px;
 }
 
 /* Company Values Section */
@@ -699,9 +707,12 @@ button[type="submit"] {
 
 .about-us-details h2 {
     font-size: 2rem;
-    color: var(--golden-orange);
-    margin-bottom: 15px;
+    color: #fff; /* Text color for better contrast */
+    margin: 0;
     text-align: center;
+    background: var(--golden-orange);
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
 }
 
 .company-statements {
@@ -713,11 +724,11 @@ button[type="submit"] {
 }
 
 .company-statements img {
-    width: 100%;
-    max-width: 500px;
+    width: 100%; /* Ensures image scales with the container */
+    margin: 0; /* Remove any negative margins for consistency */
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Keeps images edge-to-edge */
+    box-sizing: border-box;
 }
 
 .company-statements p {
@@ -730,12 +741,12 @@ button[type="submit"] {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1201px) {
     #about-us-page, #company-values {
         padding: 10px;
     }
 
-    #about-us-page p{
+    #about-us-page p {
         font-size: 1.1rem;
     }
 
@@ -745,12 +756,31 @@ button[type="submit"] {
     }
 
     .company-statements img {
-        margin-bottom: 15px;
-        max-width: 1000px;
+        margin: 0;
+        max-width: 100%;
     }
 
     .company-statements p {
         font-size: 1rem;
     }
 
+    #about-us-page img {
+        width: 100%; /* Matches container width exactly */
+        margin: 0; /* Aligns with banner edges */
+    }
+
+    #about-us-page h1 {
+        width: 100%;
+        padding: 20px 0; /* Consistent padding */
+    }
+}
+
+@media (max-width: 700px){
+    #about-us-page h1{
+        font-size: 1.3rem;
+    }
+
+    .about-us-details h2{
+        font-size: 1.3rem;
+    }
 }

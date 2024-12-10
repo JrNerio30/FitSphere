@@ -120,13 +120,6 @@ footer .footer-links a {
         font-size: 6ch;
     }
 
-    #about-us-content {
-        flex-direction: column; /* Switch to vertical layout for smaller screens */
-    }
-
-    #about-us-content img {
-        width: 100%; /* Medium size for mid-sized screens */
-    }
 }
 
 @media (max-width: 700px) {
@@ -143,14 +136,6 @@ footer .footer-links a {
         font-size: 6ch;
     }
 
-    #about-us-content {
-        flex-direction: column; /* Switch to vertical layout for smaller screens */
-    }
-
-    #about-us-content img {
-        width: 100%; /* Smaller size for small screens */
-        margin-right: 0; /* Center image for smaller layouts */
-    }
 
     #explore-section {
         flex-direction: column; /* Stack elements vertically */
