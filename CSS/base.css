@@ -224,7 +224,7 @@ button:hover {
 
 #about-us-content p {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 16px;
+    font-size: 1.7rem;
     color: var(--charcoal);
     max-width: 600px; /* Restrict the width for better readability */
     line-height: 1.6;
@@ -237,6 +237,7 @@ button:hover {
     align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap; /* Ensures elements wrap to the next row if needed */
+    text-align: center; /* Centers inline content horizontally */
 }
 
 /* Individual Explore Item Styling */
@@ -254,13 +255,24 @@ button:hover {
 
 #explore-section div p {
     text-align: left;
+    margin-bottom: 5ch;
+    font-size: 1.5rem;
 }
+
+#explore-section h3{
+    margin-top: 3ch;
+}
+
 /* Images inside Explore Section */
 #explore-section img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
+    margin-bottom: 3ch;
+    display: block; /* Ensures the image behaves as a block element */
+    margin: 0 auto; /* Centers the image horizontally */
 }
+
 
 /* Contact Us Section Styling */
 #contact-us-section {
