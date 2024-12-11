@@ -203,7 +203,7 @@ const addCartToHTML = () => {
               <div class="cart-item-info-text">
                 <h3>${info.name}</h3>
                 <div class="cart-item-quantity-price">
-                <p class="cart-item-price">$${info.price * cart.quantity}</p>
+                <p class="cart-item-price">$${(info.price * cart.quantity).toFixed(2)}</p>
                   <p class="cart-item-quantity-count remove-cart-view">Quantity: ${cart.quantity}</p>
                 </div>
                 <button class="remove-cart-item" data-id="${info.id}">Remove</button>
@@ -224,7 +224,7 @@ const addCartToHTML = () => {
   }
   cartCount.textContent = totalQuantity;
   cartTotalItems.textContent = `${totalQuantity} items`;
-  cartTotalPrice.innerHTML = `Total: <span>$${totalPrice}</span>`;
+  cartTotalPrice.innerHTML = `Total: <span>$${totalPrice.toFixed(2)}</span>`;
 };
 
 /*///////////////////////////////////////////////////////////
@@ -302,3 +302,169 @@ const changeQuantity = (productId, action) => {
   }
 };
 
+/*///////////////////////////////////////////////////////////
+ ADD EVENT LISTENER FOR COUNTRY AND STATE DROPDOWNS
+///////////////////////////////////////////////////////////*/
+// Define the country-to-states mapping
+const countryStates = {
+  US: [
+      "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
+      "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
+      "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", 
+      "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", 
+      "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", 
+      "New Hampshire", "New Jersey", "New Mexico", "New York", 
+      "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", 
+      "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", 
+      "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
+      "Washington", "West Virginia", "Wisconsin", "Wyoming"
+  ],
+  CA: [
+      "Alberta", "British Columbia", "Manitoba", "New Brunswick", 
+      "Newfoundland and Labrador", "Nova Scotia", "Ontario", "Prince Edward Island", 
+      "Quebec", "Saskatchewan", "Northwest Territories", "Nunavut", "Yukon"
+  ]
+};
+
+
+// Add an event listener to the country dropdown
+document.getElementById('country').addEventListener('change', function () {
+  const selectedCountry = this.value; // Get the selected country
+  const stateSelect = document.getElementById('state'); // Get the state dropdown
+  
+  // Clear the existing state options
+  stateSelect.innerHTML = '<option value="">Select State</option>';
+  
+  // Get the states for the selected country
+  const states = countryStates[selectedCountry];
+  
+  if (states) {
+      // Populate the state dropdown with new options
+      states.forEach(state => {
+          const option = document.createElement('option');
+          option.value = state;
+          option.textContent = state;
+          stateSelect.appendChild(option);
+      });
+      stateSelect.disabled = false; // Enable the dropdown if there are states
+  } else {
+      // Disable the dropdown if no states are available for the country
+      stateSelect.disabled = true;
+  }
+});
+
+/*///////////////////////////////////////////////////////////
+ FORM VALIDATION FOR CUSTOMER INFO AND PAYMENT INFO
+///////////////////////////////////////////////////////////*/
+
+document.getElementById('checkoutForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form submission until validation is done
+
+  let isValid = true;
+
+  // Get form fields
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+  const fullName = document.getElementById('fullName');
+  const address = document.getElementById('address');
+  const city = document.getElementById('city');
+  const country = document.getElementById('country');
+  const state = document.getElementById('state');
+  const zipCode = document.getElementById('zipCode');
+  const cardName = document.getElementById('cardName');
+  const cardNumber = document.getElementById('cardNumber');
+  const expiry = document.getElementById('expiry');
+  const cvv = document.getElementById('cvv');
+
+  // Utility function to validate fields
+  const validateField = (field, condition, errorMessage) => {
+    // Look for an existing error span within the parent element
+    let error = field.nextElementSibling && field.nextElementSibling.classList.contains('error-message')
+        ? field.nextElementSibling
+        : null;
+
+    if (condition) {
+        // If the field is valid, remove error styles and clear the error message
+        field.classList.remove('error');
+        if (error) error.remove(); // Remove the error span if it exists
+    } else {
+        // If the field is invalid, apply error styles
+        field.classList.add('error');
+
+        // If no error span exists, create one
+        if (!error) {
+            error = document.createElement('span'); // Create new span
+            error.className = 'error-message';      // Add class for styling
+            error.textContent = errorMessage;      // Set the error message
+            field.insertAdjacentElement('afterend', error); // Insert after the field
+        } else {
+            // Update the error message if span exists
+            error.textContent = errorMessage;
+        }
+        isValid = false; // Mark the form as invalid
+    }
+};
+
+
+  // Email validation
+  validateField(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), 'Please enter a valid email address.');
+
+  // Phone number validation (basic US format)
+  validateField(phone, /^\d{10}$/.test(phone.value.replace(/[^\d]/g, '')), 'Please enter a valid 10-digit phone number.');
+
+  // Full name validation
+  validateField(fullName, fullName.value.trim() !== '', 'Full name is required.');
+
+  // Address validation
+  validateField(address, address.value.trim() !== '', 'Street address is required.');
+
+  // City validation
+  validateField(city, city.value.trim() !== '', 'City is required.');
+
+  // Country validation
+  validateField(country, country.value !== '', 'Please select a country.');
+
+  // Province/State validation
+  validateField(state, state.value !== '', 'Please select a state.');
+
+  // Postal code validation
+  validateField(zipCode, /^((\d{5}-\d{4})|(\d{5})|([A-Z|a-z]\d[A-Z|a-z]\d[A-Z|a-z]\d))$/.test(zipCode.value), 'Please enter a valid US or Canadian ZIP code.');
+
+  // Card name validation
+  validateField(cardName, cardName.value.trim() !== '', 'Name on card is required.');
+
+  // Card number validation (basic Luhn algorithm check)
+  const luhnCheck = (num) => {
+      let sum = 0, alternate = false;
+      for (let i = num.length - 1; i >= 0; i--) {
+          let n = parseInt(num[i], 10);
+          if (alternate) {
+              n *= 2;
+              if (n > 9) n -= 9;
+          }
+          sum += n;
+          alternate = !alternate;
+      }
+      return sum % 10 === 0;
+  };
+  validateField(cardNumber, luhnCheck(cardNumber.value.replace(/\s+/g, '')), 'Please enter a valid card number.');
+
+  // Expiry date validation (MM/YY format)
+  const expiryMatch = expiry.value.match(/^(0[1-9]|1[0-2])\/([0-9]{2})$/);
+  validateField(expiry, expiryMatch, 'Please enter a valid expiry date (MM/YY).');
+  if (expiryMatch) {
+      const [_, month, year] = expiryMatch;
+      const expiryDate = new Date(`20${year}`, month - 1);
+      const currentDate = new Date();
+      validateField(expiry, expiryDate > currentDate, 'Card expiry date must be in the future.');
+  }
+
+  // CVV validation (3 or 4 digits)
+  validateField(cvv, /^\d{3,4}$/.test(cvv.value), 'Please enter a valid CVV.');
+
+  // If all fields are valid, allow form submission
+  if (isValid) {
+      alert('Form submitted successfully!');
+      this.submit();
+  }
+});

@@ -48,63 +48,49 @@
             <!-- Contact Information -->
             <div class="form-section">
               <h3>Contact Information</h3>
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Email" required>
+              <input type="email" name="email" id="email" placeholder="Email">
               
-              <label for="phone">Phone Number</label>
-              <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
+              <input type="tel" name="phone" id="phone" placeholder="Phone Number">
             </div>
         
             <!-- Shipping Address -->
             <div class="form-section">
               <h3>Shipping Address</h3>
-              <label for="fullName">Full Name</label>
-              <input type="text" name="fullName" id="fullName" placeholder="Full Name" required>
+              <input type="text" name="fullName" id="fullName" placeholder="Full Name">
               
-              <label for="address">Street Address</label>
-              <input type="text" name="address" id="address" placeholder="Street Address" required>
+              <input type="text" name="address" id="address" placeholder="Street Address">
               
-              <label for="apartment">Apartment, suite, etc. (optional)</label>
               <input type="text" name="apartment" id="apartment" placeholder="Apartment, suite, etc. (optional)">
               
-              <label for="city">City</label>
-              <input type="text" name="city" id="city" placeholder="City" required>
+              <input type="text" name="city" id="city" placeholder="City">
               
-              <label for="country">Country</label>
-              <select name="country" id="country" required>
-                <option value="">Select Country</option>
-                <option value="US">United States</option>
-                <!-- Add more countries as needed -->
+              <select name="country" id="country">
+                  <option value="">Select Country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
               </select>
               
-              <label for="state">State</label>
-              <select name="state" id="state" required>
-                <option value="">Select State</option>
-                <option value="CA">California</option>
-                <!-- Add more states as needed -->
+              <select name="state" id="state" disabled>
+                  <option value="">Select Province/State</option>
               </select>
               
-              <label for="zipCode">ZIP Code</label>
-              <input type="text" name="zipCode" id="zipCode" placeholder="ZIP Code" required>
+              
+              <input type="text" name="zipCode" id="zipCode" placeholder="Postal code">
             </div>
         
             <!-- Payment Information -->
             <div class="form-section">
               <h3>Payment Information</h3>
-              <label for="cardName">Name on Card</label>
-              <input type="text" name="cardName" id="cardName" placeholder="Name on Card" required>
+              <input type="text" name="cardName" id="cardName" placeholder="Name on Card">
               
-              <label for="cardNumber">Card Number</label>
-              <input type="text" name="cardNumber" id="cardNumber" placeholder="Card Number" required>
+              <input type="text" name="cardNumber" id="cardNumber" placeholder="Card Number">
               
               <div class="card-details">
                 <div class="card-details-item">
-                  <label for="expiry">MM/YY</label>
-                  <input type="text" name="expiry" id="expiry" placeholder="MM/YY" required>
+                  <input type="text" name="expiry" id="expiry" placeholder="MM/YY">
                 </div>
                 <div class="card-details-item">
-                  <label for="cvv">CVV</label>
-                  <input type="text" name="cvv" id="cvv" placeholder="CVV" required>
+                  <input type="text" name="cvv" id="cvv" placeholder="CVV">
                 </div>
               </div>
             </div>
