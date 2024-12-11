@@ -383,7 +383,13 @@ document.getElementById('checkoutForm').addEventListener('submit', function (eve
   const expiry = document.getElementById('expiry');
   const cvv = document.getElementById('cvv');
 
-  // Utility function to validate fields
+  /*///////////////////////////////////////////////////////////
+    FUNCTIONS TO VALIDATE FIELDS
+  ///////////////////////////////////////////////////////////*/
+
+  /* Utility function to validate fields
+  
+  */
   const validateField = (field, condition, errorMessage) => {
     // Look for an existing error span within the parent element
     let error = field.nextElementSibling && field.nextElementSibling.classList.contains('error-message')
@@ -432,10 +438,10 @@ document.getElementById('checkoutForm').addEventListener('submit', function (eve
   validateField(country, country.value !== '', 'Please select a country.');
 
   // Province/State validation
-  validateField(state, state.value !== '', 'Please select a state.');
+  validateField(state, state.value !== '', 'Please select a province/state.');
 
   // Postal code validation
-  validateField(zipCode, /^((\d{5}-\d{4})|(\d{5})|([A-Z|a-z]\d[A-Z|a-z]\d[A-Z|a-z]\d))$/.test(zipCode.value), 'Please enter a valid US or Canadian ZIP code.');
+  validateField(zipCode, /^((\d{5}-\d{4})|(\d{5})|([A-Z|a-z]\d[A-Z|a-z]\d[A-Z|a-z]\d))$/.test(zipCode.value), 'Please enter a valid Canadian or US postal code.');
 
   // Card name validation
   validateField(cardName, cardName.value.trim() !== '', 'Name on card is required.');
