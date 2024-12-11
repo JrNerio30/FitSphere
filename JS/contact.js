@@ -1,3 +1,7 @@
+/*///////////////////////////////////////////////////////////
+  EVENT LISTENER FOR CONTACT FORM SUBMISSION
+///////////////////////////////////////////////////////////*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     

@@ -1,3 +1,7 @@
+/*///////////////////////////////////////////////////////////
+  SINGLE USER AUTHENTICATION FORM VALIDATION
+///////////////////////////////////////////////////////////*/
+
 // Utility function to validate email
 function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,7 +54,7 @@ function validateLoginForm() {
   }
 
   if (!isValid) {
-    alert(errors.join('\n')); // Show errors to the user
+    alert(errors.join('\n')); // Show errors to the user using the alert function which displays the errors in a pop-up box.
   }
 
   return isValid;

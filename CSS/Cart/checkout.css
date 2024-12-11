@@ -273,10 +273,6 @@ a.return-to-home img{
   background-color: var(--light-peach);
 }
 
-span.error-message {
-  color: red;
-}
-
 .card-details {
   display: flex;
   gap: 1rem;

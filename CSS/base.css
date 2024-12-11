@@ -468,6 +468,10 @@ button[type="submit"] {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.error-message {
+    color: red;
+}
+
 /*DIET PLANS CSS*/
 #diet-plans-section {
     max-width: 1200px;
