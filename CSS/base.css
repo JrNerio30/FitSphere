@@ -89,7 +89,7 @@ nav img {
     font-size: 2rem;
     cursor: pointer;
     position: relative;
-    z-index: 3;
+    z-index: 9;
     padding-inline: .9rem;
 }
 
@@ -470,10 +470,11 @@ button[type="submit"] {
 
 /*DIET PLANS CSS*/
 #diet-plans-section {
-    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin: 50px auto;
-    padding: 20px;
-    text-align: center;
+    padding: 20px;  
 }
 
 #diet-plans-section h1 {
@@ -482,6 +483,7 @@ button[type="submit"] {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 /* Diet Plan Articles */
@@ -494,10 +496,6 @@ button[type="submit"] {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     align-items: center;
-}
-
-.diet-plans:nth-child(even) {
-    flex-direction: row-reverse; /* Alternate layout for variety */
 }
 
 /* Diet Plan Image */
@@ -519,12 +517,15 @@ button[type="submit"] {
     font-size: 1.8rem;
     color: var(--golden-orange);
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .diet-content p {
     font-size: 1rem;
     margin-bottom: 20px;
+    text-align: left;
     color: var(--charcoal);
+    max-width: 55ch;
 }
 
 .diet-content a {
@@ -544,7 +545,7 @@ button[type="submit"] {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .diet-plans {
         flex-direction: column;
         text-align: center;
@@ -555,10 +556,6 @@ button[type="submit"] {
         margin-bottom: 15px;
     }
 
-    .diet-content {
-        text-align: center;
-    }
-
     .diet-plans:nth-child(even) {
         flex-direction:column /* Alternate layout for variety */
     }
@@ -567,10 +564,10 @@ button[type="submit"] {
 /*FITNESS PLANS CSS*/
 
 #fitness-plans-section {
-    max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
-    text-align: center;
+    display: grid;
+    place-content: center;
 }
 
 #fitness-plans-section h1 {
@@ -579,6 +576,7 @@ button[type="submit"] {
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 /* Fitness Plan Articles */
@@ -591,10 +589,7 @@ button[type="submit"] {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     align-items: center;
-}
-
-.fitness-plans:nth-child(even) {
-    flex-direction: row-reverse; /* Alternate layout for variety */
+    max-width: 55rem;
 }
 
 /* Fitness Plan Image */
@@ -616,12 +611,15 @@ button[type="submit"] {
     font-size: 1.8rem;
     color: var(--golden-orange);
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .fitness-content p {
     font-size: 1rem;
     margin-bottom: 20px;
     color: var(--charcoal);
+    text-align: left;
+    max-width: 55ch;
 }
 
 .fitness-content a {
@@ -641,7 +639,7 @@ button[type="submit"] {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .fitness-plans {
         flex-direction: column;
         text-align: center;
@@ -649,11 +647,8 @@ button[type="submit"] {
 
     .fitness-image {
         width: 100%;
+        max-width: 30rem;
         margin-bottom: 15px;
-    }
-
-    .fitness-content {
-        text-align: center;
     }
 
     .fitness-plans:nth-child(even) {
@@ -777,12 +772,10 @@ button[type="submit"] {
     }
 
     #about-us-page img {
-        width: 100%; /* Matches container width exactly */
         margin: 0; /* Aligns with banner edges */
     }
 
     #about-us-page h1 {
-        width: 100%;
         padding: 20px 0; /* Consistent padding */
     }
 }
